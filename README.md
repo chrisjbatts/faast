@@ -9,7 +9,7 @@ Classes
 -------
 
 Class |  Interactions
----------------------
+-------|--------------
 Train | station, carriage, passenger
 Station | train, checkin, passenger
 Carriage | station, train, passenger, checkin
