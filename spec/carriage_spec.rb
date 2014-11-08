@@ -1,10 +1,9 @@
-require 'carriage'
+require_relative '../lib/carriage.rb'
 
 describe Carriage do
 
-  # let(:train) { double :train }
-  let(:passenger) { double :passenger }
   let(:carriage) { Carriage.new }
+  let(:passenger) { double :passenger }
 
   def cram_them_in(carriage)
     carriage.capacity.times { carriage.embark(passenger) }
@@ -31,19 +30,11 @@ describe Carriage do
     expect(lambda { carriage.disembark(passenger) }).to raise_error(RuntimeError)
   end
 
-
-
 end
 
 
-# BASIC FUNCTIONALITY
+# BASIC TESTS
 # must collect passengers - done
 # must drop off passengers - done
 # deny access to people when full (40 people) - done
 # must not allow a non-existent passenger to disembark - done
-
-# ADVANCED TESTS
-# must make up part of the train 
-# Must only allow doors to open when train at station
-# must collect passengers from platform
-# must drop off passengers on platform

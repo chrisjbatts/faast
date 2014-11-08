@@ -17,7 +17,7 @@ class Carriage
 
   def disembark(passenger)
     raise "Nobody left in the carriage" if empty?
-    @passengers.pop
+    @passengers.delete(passenger)
   end
 
   def capacity
