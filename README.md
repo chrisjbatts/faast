@@ -3,16 +3,16 @@ FAAST - Fast and Accessible Super Tube
 
 Overview
 --------
-FAAST is a hypothetical system used in managing all aspects of the London Underground system.
+FAAST is a hypothetical simplified system for managing the tube system within London, built in ruby.
+
+Testing
+-------
+The system was built using TDD. Testing was carried out using RSPEC and IRB.
 
 Classes
 -------
-
-Class |  Interactions
--------|--------------
-Train | station, carriage, passenger
-Station | train, checkin, passenger
-Carriage | station, train, passenger, checkin
-Passenger | carriage, checkin, station, train
-Checkin | passenger, station
-
+Train
+Station
+Carriage
+Passenger
+Checkin
