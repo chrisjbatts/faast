@@ -11,8 +11,8 @@ The system was built using TDD. Testing was carried out using RSPEC and IRB.
 
 Classes
 -------
-Train
-Station
-Carriage
-Passenger
-Checkin
+Train,
+Station,
+Carriage,
+Passenger,
+Checkin.
