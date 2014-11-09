@@ -8,6 +8,15 @@ describe Passenger do
   let(:station) { Station.new }
   let(:carriage) { Carriage.new }
 
+  def made_a_journey(passenger)
+    station.enter_faast(passenger)
+    station.checkout(passenger)
+  end
+
+  def made_two_journeys(passenger)
+    2.times {made_a_journey(passenger)}
+  end
+
   it 'must be able to get on a train from a station' do
     station.checkin(passenger)
     passenger.board(carriage, station)
@@ -20,6 +29,16 @@ describe Passenger do
     expect(station.station_passengers).to eq(1)
   end
 
+  it 'must have 1.50 deducted from their crustacian card for each journey' do
+    station.enter_faast(passenger)
+    expect(passenger.crustacian_card).to eq(2.50)
+  end
+
+  it 'must prevent the passenger from making a journey if crustacian card balance less than 2.01' do
+    made_two_journeys passenger
+    expect(lambda { made_a_journey passenger }).to raise_error(RuntimeError)
+  end
+
 end
 
 
@@ -28,5 +47,5 @@ end
 # allow a passenger to transfer from carriage to station - done
 
 # ADVANCED TESTS
-# Prevent entry to the faast system if passenger balance below GBP2.00
-# Charge GBP1.50 entry to the faast system (each journey)
+# charge GBP1.50 entry to the faast system (each journey) - done
+# prevent entry to the faast system if passenger balance below GBP2.00 - done

@@ -5,7 +5,7 @@ describe Station do
   let(:station) { Station.new }
   let(:carriage) { Carriage.new }
   let(:train) { double :train }
-  let(:passenger) { double :passenger }
+  let(:passenger) { double :passenger, bought_ticket: 4.00 }
 
   it 'must allow a train to enter the station' do
     station.arrive(train)
@@ -19,12 +19,12 @@ describe Station do
   end
 
   it 'must allow a passenger to enter the station from outside the faast system' do
-    station.checkin(passenger)
+    station.enter_faast(passenger)
     expect(station.station_passengers).to eq(1)
   end
 
   it 'must allow a passenger to exit to the outside world from the faast system' do
-    station.checkin(passenger)
+    station.enter_faast(passenger)
     station.checkout(passenger)
     expect(station.station_passengers).to eq(0)
   end

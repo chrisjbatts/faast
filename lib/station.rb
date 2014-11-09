@@ -48,4 +48,9 @@ class Station
     @station_passengers.count
   end
 
+  def enter_faast(passenger)
+    @station_passengers << passenger
+    passenger.bought_ticket
+  end
+
 end
