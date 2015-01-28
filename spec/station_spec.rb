@@ -31,13 +31,6 @@ describe Station do
 
 end
 
-
-
-
-
-
-
-
 # BASIC TESTS
 # allow a train to enter - done
 # allow a train to exit - done
